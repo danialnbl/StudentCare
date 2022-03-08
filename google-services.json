@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "563673638869",
+    "project_id": "studentcare-95458",
+    "storage_bucket": "studentcare-95458.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563673638869:android:dd91a578d57bf499fa7f5c",
+        "android_client_info": {
+          "package_name": "com.sendiribuat.studentcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563673638869-l56301ktmq0v644u3cm8po1cadg10j4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sendiribuat.studentcare",
+            "certificate_hash": "e3996676b4f1faa6a9f98562aec08cafbdddf973"
+          }
+        },
+        {
+          "client_id": "563673638869-pege28s2j6ndbsavn4qveivepng9ah21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Iji8_vCM2l5WhAvkSn3HZzOcJUZLMQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563673638869-pege28s2j6ndbsavn4qveivepng9ah21.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
