@@ -1,5 +1,6 @@
 package com.sendiribuat.studentcare;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
 
@@ -90,5 +96,35 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             editTextPassword.requestFocus();
             return;
         }
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()){
+                            Student student = new Student(fullName, age, email);
+
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child("Students")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(Register.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
+                                    }
+                                    else {
+                                        Toast.makeText(Register.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            Toast.makeText(Register.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 }
