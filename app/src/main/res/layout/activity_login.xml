@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login"
+    tools:context=".LoginActivity"
     >
 
     <TextView
@@ -24,7 +24,7 @@
 
     <EditText
         android:id="@+id/loginEmail"
-        android:layout_width="380dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:ems="10"
@@ -37,7 +37,7 @@
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="380dp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -50,7 +50,7 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="380dp"
+        android:layout_width="340dp"
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="#0ED6B9"

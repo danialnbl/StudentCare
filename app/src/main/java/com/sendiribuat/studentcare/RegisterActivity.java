@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Register extends AppCompatActivity implements View.OnClickListener{
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
     private TextView appTitle;
@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.appTitle:
-                startActivity(new Intent(this, login.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
             case R.id.registerButton:
                 registerUser();
@@ -113,16 +113,17 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     if (task.isSuccessful()){
-                                        Toast.makeText(Register.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                     }
                                     else {
-                                        Toast.makeText(Register.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
                         }
                         else {
-                            Toast.makeText(Register.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, " Failed to register, try again!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
