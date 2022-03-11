@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/button_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/custom_button.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/edit_text_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/ic_splash_screen.xml" value="0.2890625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_trcks.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_tumbs.xml" value="0.2890625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/view_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_profile.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/counselor_tab_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/student_tab_fragment.xml" value="0.16" />
       </map>
     </option>
   </component>

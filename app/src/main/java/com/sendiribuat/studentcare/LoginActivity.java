@@ -2,6 +2,7 @@ package com.sendiribuat.studentcare;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -23,21 +25,39 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText ETLoginEmail, ETLoginPassword;
     private Button logInB;
 
+    TabLayout tabLayout;
+    ViewPager viewPager;
+
+
     private FirebaseAuth mAuth;
+    float v=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        register = (TextView) findViewById(R.id.register);
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.view_pager);
+
+
+        //Tab Tab Tab
+        tabLayout.addTab(tabLayout.newTab().setText("Student"));
+        tabLayout.addTab(tabLayout.newTab().setText("Counselor"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        final LoginAdapter adapter = new LoginAdapter(getSupportFragmentManager(),this,tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        //Initialize
+        register = (TextView) findViewById(R.id.studentToRegister);
         register.setOnClickListener(this);
-
-        logInB = (Button) findViewById(R.id.loginButton);
+        logInB = (Button) findViewById(R.id.studentLoginButton);
         logInB.setOnClickListener(this);
-
-        ETLoginEmail = (EditText) findViewById(R.id.loginEmail);
-        ETLoginPassword = (EditText) findViewById(R.id.loginPassword);
+        ETLoginEmail = (EditText) findViewById(R.id.studentEmail);
+        ETLoginPassword = (EditText) findViewById(R.id.studentPassword);
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -45,11 +65,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.register:
+            case R.id.studentToRegister:
                 startActivity(new Intent(this, RegisterActivity.class));
                 break;
 
-                case R.id.loginButton:
+            case R.id.studentLoginButton:
                     studentLogin();
                     break;
         }
