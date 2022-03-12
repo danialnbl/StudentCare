@@ -1,7 +1,6 @@
 package com.sendiribuat.studentcare;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class ForgotPasswordActivity extends AppCompatActivity {

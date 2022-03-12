@@ -24,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView appTitle;
     private EditText editTextFullName, editTextAge, editTextEmail,  editTextPassword;
     private Button registerUser;
+    private String userType = "Student";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,17 +104,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            Student student = new Student(fullName, age, email);
+                            Student student = new Student(fullName, age, email, userType);
 
                             FirebaseDatabase.getInstance().getReference("Users")
-                                    .child("Students")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     if (task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this, "User has been registered succesfully!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                     }
                                     else {

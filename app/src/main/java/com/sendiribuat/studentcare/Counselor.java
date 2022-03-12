@@ -1,14 +1,13 @@
 package com.sendiribuat.studentcare;
 
-public class Student {
-
+public class Counselor {
     public String fullName, age, email, userType;
 
-    public Student(){
+    public Counselor(){
 
     }
 
-    public Student(String fullName, String age, String email, String userType){
+    public Counselor(String fullName, String age, String email, String userType){
         this.fullName = fullName;
         this.age = age;
         this.email = email;
