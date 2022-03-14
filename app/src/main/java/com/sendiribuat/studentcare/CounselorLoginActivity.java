@@ -58,7 +58,7 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
                 counselorLogin();
                 break;
 
-            case R.id.forgotPassword:
+            case R.id.counselorForgotPassword:
                 startActivity(new Intent(this, ForgotPasswordActivity.class));
                 break;
         }
