@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             userTypeDB = snapshot.child("userType").getValue().toString();
 
                             if (userTypeDB.equals("Student")){
-                                startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                                startActivity(new Intent(LoginActivity.this, DailyPlansActivity.class));
                             }
                             else{
                                 Toast.makeText(LoginActivity.this,"Please use counselor login page", Toast.LENGTH_LONG).show();
