@@ -109,7 +109,7 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
                             userTypeDB = snapshot.child("userType").getValue().toString();
 
                             if (userTypeDB.equals("Counselor")){
-                                startActivity(new Intent(CounselorLoginActivity.this, ProfileActivity.class));
+                                startActivity(new Intent(CounselorLoginActivity.this, StudentListActivity.class));
                             }
                             else{
                                 Toast.makeText(CounselorLoginActivity.this,"Please use student login page", Toast.LENGTH_LONG).show();
