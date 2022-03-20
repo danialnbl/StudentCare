@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +25,7 @@ import java.util.ArrayList;
 
 public class StudentListActivity extends AppCompatActivity {
 
+    private BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
     private StudentListAdapter adapter;
 
@@ -45,6 +49,27 @@ public class StudentListActivity extends AppCompatActivity {
 
         adapter = new StudentListAdapter(options);
         recyclerView.setAdapter(adapter);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.student_list);
+
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case (R.id.student_list):
+                        return true;
+                    case (R.id.weeklyAgenda):
+                        startActivity(new Intent(StudentListActivity.this,CounselorWeeklyAgendaActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
     }
 

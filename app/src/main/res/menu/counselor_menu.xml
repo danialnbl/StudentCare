@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/student_list"
+        android:title="Student List"
+        android:icon="@drawable/ic_studentlist"/>
+
+    <item
+        android:id="@+id/weeklyAgenda"
+        android:title="Weekly Agenda"
+        android:icon="@drawable/ic_weeklyagenda"/>
+
+</menu>

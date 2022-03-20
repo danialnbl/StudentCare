@@ -5,13 +5,16 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/btn_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/button_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/counselor_selector.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/custom_button.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/edit_text_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/ic_splash_screen.xml" value="0.2890625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/ic_studentlist.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_trcks.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_tumbs.xml" value="0.2890625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/view_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_counselor_login.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_counselor_weekly_agenda.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_daily_plans.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -19,11 +22,12 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_profile.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_splash_screen.xml" value="0.2536231884057971" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_student_list.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_student_list.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_welcome.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/counselor_tab_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/student_tab_fragment.xml" value="0.16" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/studentlist.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/menu/counselor_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

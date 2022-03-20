@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentCare">
         <activity
+            android:name=".CounselorWeeklyAgendaActivity"
+            android:exported="false" />
+        <activity
             android:name=".StudentListActivity"
             android:exported="false" />
         <activity
