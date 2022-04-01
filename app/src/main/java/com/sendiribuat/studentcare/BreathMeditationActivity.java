@@ -3,6 +3,7 @@ package com.sendiribuat.studentcare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
@@ -23,6 +24,8 @@ public class BreathMeditationActivity extends AppCompatActivity {
     private TextView breatheText, timeTxt, sessionTxt, guideTxt;
     private Button startButton;
     private Prefs prefs;
+    private MediaPlayer player;
+    int pausedMilliSec=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class BreathMeditationActivity extends AppCompatActivity {
         sessionTxt = findViewById(R.id.todayMinutesTxt);
         guideTxt = findViewById(R.id.guideTxt);
         prefs = new Prefs(this);
+
+        play();
 
         startIntroAnimation();
 
@@ -48,9 +53,56 @@ public class BreathMeditationActivity extends AppCompatActivity {
                 startAnimation();
             }
         });
+    }
+
+    private void play(){
+        if (player == null){
+            player = MediaPlayer.create(this,R.raw.just_chill);
+            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    stopPlayer();
+                }
+            });
+        }
+
+        player.start();
+    }
+
+    private void stopPlayer(){
+        if (player !=null){
+            player.release();
+            player = null;
+        }
+    }
+
+    private void pause(){
+        if (player != null){
+            player.pause();
+            pausedMilliSec = player.getCurrentPosition();
+        }
+    }
 
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlayer();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (player == null){
+            player.seekTo(pausedMilliSec);
+        }
+        player.start();
     }
 
     private void startIntroAnimation(){
@@ -118,4 +170,5 @@ public class BreathMeditationActivity extends AppCompatActivity {
                 .start();
     }
 
+    
 }
