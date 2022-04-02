@@ -1,15 +1,20 @@
 package com.sendiribuat.studentcare;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DailyPlansActivity extends AppCompatActivity implements View.OnClickListener{
 
     private CardView BreathMeditationCV;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,27 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
 
         BreathMeditationCV = findViewById(R.id.BreathMeditationCard);
         BreathMeditationCV.setOnClickListener(this);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigator);
+        bottomNavigationView.setSelectedItemId(R.id.daily_plan);
+
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case (R.id.daily_plan):
+                        return true;
+                    case (R.id.session):
+                        startActivity(new Intent(DailyPlansActivity.this,BookSessionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
     }
 
     @Override
