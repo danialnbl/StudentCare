@@ -34,7 +34,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
     private TextView testText;
     private Spinner mySpinner;
     private Button confirmButton;
-    private String Date, userFullNameDB, userAgeDB, time;
+    private String Date, userFullNameDB, userAgeDB, time, email;
     private Session session;
 
     @Override
@@ -98,8 +98,9 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         userFullNameDB = snapshot.child("fullName").getValue().toString();
                         userAgeDB = snapshot.child("age").getValue().toString();
+                        email = snapshot.child("email").getValue().toString();
                         time = mySpinner.getSelectedItem().toString();
-                        session = new Session(userFullNameDB,userAgeDB,Date,time,userID);
+                        session = new Session(userFullNameDB,userAgeDB,Date,time,userID,email);
                     }
 
                     @Override
