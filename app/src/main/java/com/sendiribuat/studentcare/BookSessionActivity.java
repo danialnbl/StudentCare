@@ -90,8 +90,6 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()){
             case R.id.confirmBtn:
 
-
-
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users");
                 String userID = user.getUid();
@@ -101,7 +99,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                         userFullNameDB = snapshot.child("fullName").getValue().toString();
                         userAgeDB = snapshot.child("age").getValue().toString();
                         time = mySpinner.getSelectedItem().toString();
-                        session = new Session(userFullNameDB,userAgeDB,Date,time);
+                        session = new Session(userFullNameDB,userAgeDB,Date,time,userID);
                     }
 
                     @Override

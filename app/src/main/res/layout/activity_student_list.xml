@@ -25,10 +25,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/studentList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="279dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/studentRequest"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/studentList" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"

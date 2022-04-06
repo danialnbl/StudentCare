@@ -26,8 +26,9 @@ import java.util.ArrayList;
 public class StudentListActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,studentRequestList;
     private StudentListAdapter adapter;
+    private StudentRequestAdapter requestAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,16 @@ public class StudentListActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.studentList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        studentRequestList = (RecyclerView) findViewById(R.id.studentRequest);
+        studentRequestList.setLayoutManager(new LinearLayoutManager(this));
 
+        FirebaseRecyclerOptions<StudentRequestModel> requestOption =
+                new FirebaseRecyclerOptions.Builder<StudentRequestModel>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("Request"), StudentRequestModel.class)
+                .build();
+
+        requestAdapter = new StudentRequestAdapter(requestOption);
+        studentRequestList.setAdapter(requestAdapter);
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
@@ -77,12 +87,14 @@ public class StudentListActivity extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         adapter.startListening();
+        requestAdapter.startListening();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
         adapter.stopListening();
+        requestAdapter.stopListening();
     }
 
 }
