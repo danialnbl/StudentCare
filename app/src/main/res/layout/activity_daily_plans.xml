@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DailyPlansActivity"
     android:orientation="vertical"
-    android:background="#ffff">
+    android:background="@color/colorPrimary">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Daily Plans"
         android:textSize="30dp"
-        android:textColor="#000"
+        android:textColor="#DAE6FD"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-medium"/>
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Complete your daily task"
         android:textStyle="bold"
-        android:textColor="#272727"
+        android:textColor="#DAE6FD"
         android:fontFamily="sans-serif"
         android:layout_marginTop="10dp"/>
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         app:cardCornerRadius="15dp"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="20dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -118,6 +118,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/workBreakCard"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         app:cardCornerRadius="15dp"
@@ -165,7 +166,7 @@
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500"
+        android:background="@color/bottomNav"
         app:itemTextColor="@drawable/counselor_selector"
         app:itemIconTint="@drawable/counselor_selector"
         app:menu="@menu/student_menu"

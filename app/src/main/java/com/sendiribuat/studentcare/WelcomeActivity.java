@@ -27,10 +27,12 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         switch (view.getId()){
             case R.id.ToStudentButton:
                 startActivity(new Intent(this, LoginActivity.class));
+                overridePendingTransition(0,0);
                 break;
 
             case R.id.ToCounselorButton:
                 startActivity(new Intent(this, CounselorLoginActivity.class));
+                overridePendingTransition(0,0);
                 break;
         }
     }

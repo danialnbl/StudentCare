@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DailyPlansActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private CardView BreathMeditationCV;
+    private CardView BreathMeditationCV, MusicMeditationCV;
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -23,6 +23,9 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
 
         BreathMeditationCV = findViewById(R.id.BreathMeditationCard);
         BreathMeditationCV.setOnClickListener(this);
+
+        MusicMeditationCV = findViewById(R.id.SoundMeditationCard);
+        MusicMeditationCV.setOnClickListener(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.daily_plan);
@@ -51,6 +54,9 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
         switch (view.getId()){
             case R.id.BreathMeditationCard:
                 startActivity(new Intent(this, BreathMeditationActivity.class));
+                break;
+            case R.id.SoundMeditationCard:
+                startActivity(new Intent(this,SoundMeditationActivity.class));
                 break;
         }
     }
