@@ -19,6 +19,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/student_selector.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_trcks.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_tumbs.xml" value="0.2890625" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/timer_icon.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/view_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_book_session.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_breath_meditation.xml" value="0.264" />
@@ -34,6 +35,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_splash_screen.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_student_list.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_welcome.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_work_break.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/content_breath_meditation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/counselor_tab_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/soundlist.xml" value="0.264" />
