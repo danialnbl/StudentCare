@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentListActivity">
+    tools:context=".StudentListActivity"
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/title"
@@ -14,7 +15,7 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.105"
@@ -25,10 +26,25 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/studentList"
         android:layout_width="match_parent"
-        android:layout_height="279dp"
+        android:layout_height="330dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/requestListTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request List"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintVertical_bias="0.039"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentList"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/studentRequest"
@@ -36,13 +52,13 @@
         android:layout_height="200dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentList" />
+        app:layout_constraintTop_toBottomOf="@+id/requestListTitle" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500"
+        android:background="@color/bottomNav"
         app:itemTextColor="@drawable/counselor_selector"
         app:itemIconTint="@drawable/counselor_selector"
         app:menu="@menu/counselor_menu"
