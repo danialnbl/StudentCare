@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,22 +21,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/fullName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full Name : "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
-
-            <TextView
                 android:id="@+id/vFullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
                 android:text="Test"
+                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="26sp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -49,8 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Age : "
                 android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/vAge"
@@ -60,55 +52,51 @@
                 android:text="20"
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="invisible" />
+
         </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date : "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/vDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:text="20/4/2022"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/vTime"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="9.00am"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+            <Button
+                android:id="@+id/acceptBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Accept"
+                android:layout_gravity="right"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time : "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/vTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="9.00am"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
             <TextView
                 android:id="@+id/userId"
                 android:layout_width="wrap_content"
@@ -116,27 +104,7 @@
                 android:text=""
                 android:visibility="invisible"
                  />
-
         </LinearLayout>
-
-        <Button
-            android:id="@+id/acceptBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accept"
-            android:layout_gravity="right"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:visibility="invisible" />
-
-
 
     </LinearLayout>
 
