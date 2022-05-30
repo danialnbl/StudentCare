@@ -1,9 +1,13 @@
 package com.sendiribuat.studentcare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +22,7 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_plans);
 
@@ -65,5 +70,24 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
                 startActivity(new Intent(this,WorkBreakActivity.class));
                 break;
         }
+    }
+
+    public void alert (Context mContext){
+        new AlertDialog.Builder(mContext)
+                .setTitle("Logout?")
+                .setMessage("Do you want to logout?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(DailyPlansActivity.this,WelcomeActivity.class));
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        alert(DailyPlansActivity.this);
     }
 }

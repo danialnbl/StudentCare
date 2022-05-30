@@ -1,9 +1,12 @@
 package com.sendiribuat.studentcare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -101,6 +104,20 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                         email = snapshot.child("email").getValue().toString();
                         time = mySpinner.getSelectedItem().toString();
                         session = new Session(userFullNameDB,userAgeDB,Date,time,userID,email);
+
+                        FirebaseDatabase.getInstance().getReference("Request")
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(session).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(BookSessionActivity.this, "Session Requested", Toast.LENGTH_LONG).show();
+                                }
+                                else {
+                                    Toast.makeText(BookSessionActivity.this, "Session request failed, please try again", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
                     }
 
                     @Override
@@ -109,21 +126,26 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                     }
                 });
 
-
-                FirebaseDatabase.getInstance().getReference("Request")
-                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .setValue(session).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(BookSessionActivity.this, "Berjaya", Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            Toast.makeText(BookSessionActivity.this, "Fail", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
                 break;
         }
+    }
+
+    public void alert (Context mContext){
+        new AlertDialog.Builder(mContext)
+                .setTitle("Logout?")
+                .setMessage("Do you want to logout?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(BookSessionActivity.this,WelcomeActivity.class));
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        alert(BookSessionActivity.this);
     }
 }

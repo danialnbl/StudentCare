@@ -23,7 +23,7 @@ public class WorkBreakActivity extends AppCompatActivity {
         setContentView(R.layout.activity_work_break);
 
         timer = findViewById(R.id.timer);
-        duration = TimeUnit.MINUTES.toMillis(1);
+        duration = TimeUnit.MINUTES.toMillis(5);
 
         coundownlah = new CountDownTimer(duration, 1000) {
             @Override
