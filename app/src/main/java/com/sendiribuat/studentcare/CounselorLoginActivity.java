@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
     private TextView CounselorForgotPassword;
     private EditText ETCounselorEmail, ETCounselorPassword;
     private Button CounselorLgBtn;
+    private ProgressBar progressBar;
+
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private String userID, userTypeDB;
@@ -45,6 +48,8 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
 
         ETCounselorEmail = (EditText) findViewById(R.id.counselorLoginEmail);
         ETCounselorPassword = (EditText) findViewById(R.id.counselorLoginPassword);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -92,6 +97,8 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -109,9 +116,11 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
                             userTypeDB = snapshot.child("userType").getValue().toString();
 
                             if (userTypeDB.equals("Counselor")){
+                                progressBar.setVisibility(View.INVISIBLE);
                                 startActivity(new Intent(CounselorLoginActivity.this, StudentListActivity.class));
                             }
                             else{
+                                progressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(CounselorLoginActivity.this,"Please use student login page", Toast.LENGTH_LONG).show();
                             }
                         }
@@ -122,6 +131,7 @@ public class CounselorLoginActivity extends AppCompatActivity implements View.On
                         }
                     });
                 }else{
+                    progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(CounselorLoginActivity.this,"Failed to Login! Please check your credentials", Toast.LENGTH_LONG).show();
                 }
             }

@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView register, forgotPassword;
     private EditText ETLoginEmail, ETLoginPassword;
     private Button logInB;
+    private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -52,6 +54,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(this);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
     }
 
     @Override
@@ -99,6 +103,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -116,9 +122,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             userTypeDB = snapshot.child("userType").getValue().toString();
 
                             if (userTypeDB.equals("Student")){
+                                progressBar.setVisibility(View.INVISIBLE);
                                 startActivity(new Intent(LoginActivity.this, DailyPlansActivity.class));
                             }
                             else{
+                                progressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(LoginActivity.this,"Please use counselor login page", Toast.LENGTH_LONG).show();
                             }
                         }
@@ -129,7 +137,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     });
                 }else{
-                    Toast.makeText(LoginActivity.this,"Failed to LoginActivity! Please check your credentials", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
+                    Toast.makeText(LoginActivity.this,"Failed to Login! Please check your credentials", Toast.LENGTH_LONG).show();
                 }
             }
         });
