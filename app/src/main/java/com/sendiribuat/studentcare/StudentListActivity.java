@@ -34,6 +34,7 @@ public class StudentListActivity extends AppCompatActivity {
     private RecyclerView recyclerView,studentRequestList;
     private StudentListAdapter adapter;
     private StudentRequestAdapter requestAdapter;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class StudentListActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
+
+        mAuth = FirebaseAuth.getInstance();
 
         recyclerView = (RecyclerView) findViewById(R.id.studentList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -56,14 +59,6 @@ public class StudentListActivity extends AppCompatActivity {
                 .build();
 
         requestAdapter = new StudentRequestAdapter(requestOption);
-
-        if (requestAdapter.getItemCount() == 0)
-        {
-            Toast.makeText(getApplicationContext(), "jadi", Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(getApplicationContext(), "ntahlahnak", Toast.LENGTH_LONG).show();
-        }
 
         studentRequestList.setAdapter(requestAdapter);
 
@@ -119,6 +114,7 @@ public class StudentListActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        mAuth.signOut();
                         startActivity(new Intent(StudentListActivity.this,WelcomeActivity.class));
                     }
                 })

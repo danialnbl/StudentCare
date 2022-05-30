@@ -14,11 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DailyPlansActivity extends AppCompatActivity implements View.OnClickListener{
 
     private CardView BreathMeditationCV, MusicMeditationCV, WorkBreakCV;
     private BottomNavigationView bottomNavigationView;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.daily_plan);
+
+        mAuth = FirebaseAuth.getInstance();
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -79,6 +83,7 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        mAuth.signOut();
                         startActivity(new Intent(DailyPlansActivity.this,WelcomeActivity.class));
                     }
                 })

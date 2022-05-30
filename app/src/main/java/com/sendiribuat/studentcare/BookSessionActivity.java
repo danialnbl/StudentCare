@@ -39,6 +39,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
     private Button confirmButton;
     private String Date, userFullNameDB, userAgeDB, time, email;
     private Session session;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
         mySpinner = findViewById(R.id.spinner);
         confirmButton = findViewById(R.id.confirmBtn);
         confirmButton.setOnClickListener(this);
+        mAuth = FirebaseAuth.getInstance();
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(BookSessionActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
@@ -138,6 +140,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        mAuth.signOut();
                         startActivity(new Intent(BookSessionActivity.this,WelcomeActivity.class));
                     }
                 })

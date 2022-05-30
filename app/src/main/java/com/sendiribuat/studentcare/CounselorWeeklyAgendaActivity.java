@@ -26,6 +26,7 @@ public class CounselorWeeklyAgendaActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
     private weeklyAgendaAdapter requestAdapter;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class CounselorWeeklyAgendaActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.weeklyAgenda);
+
+        mAuth = FirebaseAuth.getInstance();
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -87,6 +90,7 @@ public class CounselorWeeklyAgendaActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        mAuth.signOut();
                         startActivity(new Intent(CounselorWeeklyAgendaActivity.this,WelcomeActivity.class));
                     }
                 })
