@@ -32,9 +32,9 @@ public class SoundMeditationActivity extends AppCompatActivity {
     private GifView gifView;
     private MediaPlayer player;
     private TextView songName, songAuthor;
-    int[] listArray = {R.raw.just_chill, R.raw.staringat_nightsky};
-    String[] songNameArray = {"Just Chill", "Staring at the Night Sky"};
-    String[] songAuthorArray = {"Ahjay Stelino", "Alejandro Magaña (A. M.)"};
+    int[] listArray = {R.raw.just_chill, R.raw.staringat_nightsky, R.raw.island_beat, R.raw.beautiful_dream, R.raw.soul_jazz};
+    String[] songNameArray = {"Just Chill", "Staring at the Night Sky", "Island Beat", "Beautiful Dream","Soul Jazz"};
+    String[] songAuthorArray = {"Ahjay Stelino", "Alejandro Magaña (A. M.)", "Arulo", "Diego Nava", "Francisco Alvear"};
     int i = 0;
 
     @Override
@@ -120,7 +120,7 @@ public class SoundMeditationActivity extends AppCompatActivity {
             player = null;
         }
 
-        if (i >= 1){
+        if (i >= 4){
             i=0;
             songName.setText(songNameArray[i]);
             songAuthor.setText(songAuthorArray[i]);
@@ -154,7 +154,7 @@ public class SoundMeditationActivity extends AppCompatActivity {
             player = null;
         }
 
-        if (i >= 1){
+        if (i >= 4){
             i=0;
             songName.setText(songNameArray[i]);
             songAuthor.setText(songAuthorArray[i]);
@@ -188,8 +188,8 @@ public class SoundMeditationActivity extends AppCompatActivity {
             player = null;
         }
 
-        if (i >= 1){
-            i=0;
+        if (i <= 0){
+            i=4;
             songName.setText(songNameArray[i]);
             songAuthor.setText(songAuthorArray[i]);
             player = MediaPlayer.create(this,listArray[i]);
@@ -202,9 +202,9 @@ public class SoundMeditationActivity extends AppCompatActivity {
         }else{
             i--;
 
-            if (i <0){
-                i = 1;
-            }
+//            if (i <0){
+//                i = 4;
+//            }
 
             songName.setText(songNameArray[i]);
             songAuthor.setText(songAuthorArray[i]);

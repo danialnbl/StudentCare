@@ -7,6 +7,29 @@
     android:background="@color/colorPrimary"
     tools:context=".BreathMeditationActivity">
 
+    <TextView
+        android:id="@+id/tajuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Breath Meditation "
+        android:textSize="30dp"
+        android:textColor="#DAE6FD"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Press start to begin the breath routine"
+        android:textStyle="italic"
+        android:layout_below="@+id/tajuk"
+        android:textSize="20dp"
+        android:textColor="#DAE6FD"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -16,50 +39,50 @@
         android:contentDescription="TODO"
         app:srcCompat="@drawable/square_pink" />
 
-    <TextView
-        android:id="@+id/breathTakenText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:text="7 Breathes"
-        android:textColor="#FF9696"
-        android:textSize="20sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/breathTakenText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:text="7 Breathes"-->
+<!--        android:textColor="#FF9696"-->
+<!--        android:textSize="20sp" />-->
 
-    <TextView
-        android:id="@+id/lastSessionTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/breathTakenText"
-        android:layout_below="@+id/breathTakenText"
-        android:text="Last at 11:45 PM"
-        android:textColor="#FF9696"
-        android:textSize="16sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/lastSessionTxt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignStart="@+id/breathTakenText"-->
+<!--        android:layout_below="@+id/breathTakenText"-->
+<!--        android:text="Last at 11:45 PM"-->
+<!--        android:textColor="#FF9696"-->
+<!--        android:textSize="16sp" />-->
 
-    <TextView
-        android:id="@+id/todayMinutesTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lastSessionTxt"
-        android:layout_below="@id/lastSessionTxt"
-        android:text="4 min Today"
-        android:textColor="#FF9696"
-        android:textSize="16sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/todayMinutesTxt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignStart="@+id/lastSessionTxt"-->
+<!--        android:layout_below="@id/lastSessionTxt"-->
+<!--        android:text="4 min Today"-->
+<!--        android:textColor="#FF9696"-->
+<!--        android:textSize="16sp" />-->
 
-    <TextView
-        android:id="@+id/timeRequiredTxt"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="31dp"
-        android:gravity="right|bottom"
-        android:text="1 min"
-        android:textColor="#FF9696"
-        android:textSize="24sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/timeRequiredTxt"-->
+<!--        android:layout_width="128dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="66dp"-->
+<!--        android:layout_marginEnd="31dp"-->
+<!--        android:gravity="right|bottom"-->
+<!--        android:text="1 min"-->
+<!--        android:textColor="#FF9696"-->
+<!--        android:textSize="24sp" />-->
 
     <Button
         android:id="@+id/startButton"
@@ -82,7 +105,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:text="Breathe"
-        android:textColor="#FFFFFF"
+        android:textColor="#DAE6FD"
         android:textSize="18sp" />
 
 </RelativeLayout>

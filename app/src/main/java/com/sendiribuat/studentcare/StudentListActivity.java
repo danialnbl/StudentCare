@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -55,6 +56,15 @@ public class StudentListActivity extends AppCompatActivity {
                 .build();
 
         requestAdapter = new StudentRequestAdapter(requestOption);
+
+        if (requestAdapter.getItemCount() == 0)
+        {
+            Toast.makeText(getApplicationContext(), "jadi", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "ntahlahnak", Toast.LENGTH_LONG).show();
+        }
+
         studentRequestList.setAdapter(requestAdapter);
 
         FirebaseRecyclerOptions<model> options =

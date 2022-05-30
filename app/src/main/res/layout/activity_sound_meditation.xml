@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Music Name"
+            android:text="To Play Music"
             android:textAlignment="center"
             android:textColor="#FFFF"
             android:textSize="30dp"
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Music Artist"
+            android:text="Use the play button"
             android:textColor="#FFFF"
             android:textSize="25dp" />
     </LinearLayout>

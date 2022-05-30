@@ -23,7 +23,7 @@ public class BreathMeditationActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView breatheText, timeTxt, sessionTxt, guideTxt;
     private Button startButton;
-    private Prefs prefs;
+//    private Prefs prefs;
     private MediaPlayer player;
     int pausedMilliSec=0;
 
@@ -32,19 +32,19 @@ public class BreathMeditationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breath_meditation);
         imageView = findViewById(R.id.imageView2);
-        breatheText = findViewById(R.id.breathTakenText);
-        timeTxt = findViewById(R.id.lastSessionTxt);
-        sessionTxt = findViewById(R.id.todayMinutesTxt);
+//        breatheText = findViewById(R.id.breathTakenText);
+//        timeTxt = findViewById(R.id.lastSessionTxt);
+//        sessionTxt = findViewById(R.id.todayMinutesTxt);
         guideTxt = findViewById(R.id.guideTxt);
-        prefs = new Prefs(this);
+//        prefs = new Prefs(this);
 
         play();
 
         startIntroAnimation();
 
-        sessionTxt.setText(MessageFormat.format("{0} min today", prefs.getSessions()));
-        breatheText.setText(MessageFormat.format("{0} Breaths",prefs.getBreaths()));
-        timeTxt.setText(prefs.getDate());
+//        sessionTxt.setText(MessageFormat.format("{0} min today", prefs.getSessions()));
+//        breatheText.setText(MessageFormat.format("{0} Breaths",prefs.getBreaths()));
+//        timeTxt.setText(prefs.getDate());
 
         startButton = findViewById(R.id.startButton);
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -143,10 +143,11 @@ public class BreathMeditationActivity extends AppCompatActivity {
                         guideTxt.setText("Good Job");
                         imageView.setScaleX(1.0f);
                         imageView.setScaleY(1.0f);
+                        imageView.setRotation(0.0f);
 
-                        prefs.setSessions(prefs.getSessions() + 1);
-                        prefs.setBreaths(prefs.getBreaths() +1);
-                        prefs.setDate(System.currentTimeMillis());
+//                        prefs.setSessions(prefs.getSessions() + 1);
+//                        prefs.setBreaths(prefs.getBreaths() +1);
+//                        prefs.setDate(System.currentTimeMillis());
 
                         //refresh activity
                         new CountDownTimer(2000, 1000) {
@@ -159,9 +160,8 @@ public class BreathMeditationActivity extends AppCompatActivity {
 
                             @Override
                             public void onFinish() {
-                                finish();
+//                                finish();
                                 overridePendingTransition( 0, 0);
-                                startActivity(new Intent(getApplicationContext(), BreathMeditationActivity.class));
                                 overridePendingTransition( 0, 0);
                             }
                         }.start();
