@@ -1,10 +1,14 @@
 package com.sendiribuat.studentcare;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,6 +29,7 @@ public class CounselorWeeklyAgendaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counselor_weekly_agenda);
 
@@ -73,5 +78,24 @@ public class CounselorWeeklyAgendaActivity extends AppCompatActivity {
     protected void onStop(){
         super.onStop();
         requestAdapter.stopListening();
+    }
+
+    public void alert (Context mContext){
+        new AlertDialog.Builder(mContext)
+                .setTitle("Logout?")
+                .setMessage("Do you want to logout?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(CounselorWeeklyAgendaActivity.this,WelcomeActivity.class));
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        alert(CounselorWeeklyAgendaActivity.this);
     }
 }

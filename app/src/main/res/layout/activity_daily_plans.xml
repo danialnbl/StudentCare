@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Complete your daily task"
+        android:text="Try this if you are stress"
         android:textStyle="bold"
         android:textColor="#DAE6FD"
         android:fontFamily="sans-serif"
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breath Meditation"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:textColor="#ffff"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
@@ -70,7 +70,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/welcome_bg" />
+                android:src="@drawable/meditate" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -86,33 +86,34 @@
             android:layout_height="match_parent"
             android:background="@color/purple_500"
             android:padding="10dp">
+
             <TextView
                 android:id="@+id/t2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sound Meditation"
-                android:textSize="30sp"
-                android:textColor="#ffff"
-                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:text="Sound Meditation"
+                android:textColor="#ffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/d2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Relax your ears . 5 min"
+                android:text="Relax your ears with relaxing \nmusic"
                 android:layout_below="@+id/t2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
                 android:textColor="#ffff" />
 
             <ImageView
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/welcome_bg" />
+                android:src="@drawable/soundmeditationlogo" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -128,16 +129,17 @@
             android:layout_height="match_parent"
             android:background="@color/purple_500"
             android:padding="10dp">
+
             <TextView
                 android:id="@+id/t3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Work Break"
-                android:textSize="30sp"
-                android:textColor="#ffff"
-                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:text="Work Break"
+                android:textColor="#ffff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/d3"
@@ -146,7 +148,7 @@
                 android:layout_below="@+id/t3"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
-                android:text="Stop doing your work . 10 min"
+                android:text="Stop doing your \nwork . 5 min"
                 android:textColor="#ffff" />
 
             <ImageView
@@ -154,7 +156,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/welcome_bg" />
+                android:src="@drawable/relax" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
