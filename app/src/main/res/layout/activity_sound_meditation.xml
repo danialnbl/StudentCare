@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="90dp"
-            app:gif="@drawable/relax" />
+            app:gif="@drawable/relax"/>
 
         <TextView
             android:id="@+id/songName"

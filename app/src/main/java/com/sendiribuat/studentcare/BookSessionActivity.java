@@ -57,6 +57,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
+        calendarView.setMinDate(System.currentTimeMillis() - 1000);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
