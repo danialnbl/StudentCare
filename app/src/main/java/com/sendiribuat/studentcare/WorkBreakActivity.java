@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class WorkBreakActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Toast.makeText(getApplicationContext(), "Your break has ended", Toast.LENGTH_LONG).show();
+                vibrate();
                 startActivity(new Intent(getApplicationContext(),DailyPlansActivity.class));
             }
         }.start();
@@ -59,6 +61,12 @@ public class WorkBreakActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("No", null)
                 .show();
+    }
+
+    public void vibrate ()
+    {
+        Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibe.vibrate(5000);
     }
 
     @Override
