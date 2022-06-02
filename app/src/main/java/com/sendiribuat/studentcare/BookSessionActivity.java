@@ -37,7 +37,7 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
     private TextView testText;
     private Spinner mySpinner;
     private Button confirmButton;
-    private String Date, userFullNameDB, userAgeDB, time, email;
+    private String Date, userFullNameDB, userAgeDB, time, email,phone;
     private Session session;
     private FirebaseAuth mAuth;
 
@@ -105,8 +105,9 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                         userFullNameDB = snapshot.child("fullName").getValue().toString();
                         userAgeDB = snapshot.child("age").getValue().toString();
                         email = snapshot.child("email").getValue().toString();
+                        phone = snapshot.child("phone").getValue().toString();
                         time = mySpinner.getSelectedItem().toString();
-                        session = new Session(userFullNameDB,userAgeDB,Date,time,userID,email);
+                        session = new Session(userFullNameDB,userAgeDB,Date,time,userID,email,phone);
 
                         FirebaseDatabase.getInstance().getReference("Request")
                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     private FirebaseAuth mAuth;
     private TextView appTitle;
-    private EditText editTextFullName, editTextAge, editTextEmail,  editTextPassword;
+    private EditText editTextFullName, editTextAge, editTextEmail,  editTextPassword, editTextPhone;
     private Button registerUser;
     private String userType = "Student";
 
@@ -42,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editTextAge = (EditText) findViewById(R.id.age);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
+        editTextPhone = (EditText) findViewById(R.id.phone);
 
     }
 
@@ -61,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String password = editTextPassword.getText().toString().trim();
         String fullName = editTextFullName.getText().toString().trim();
         String age = editTextAge.getText().toString().trim();
+        String phone = editTextPhone.getText().toString().trim();
 
         if(fullName.isEmpty()){
             editTextFullName.setError("Full name is required");
@@ -98,13 +100,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+        if(phone.isEmpty()){
+            editTextPassword.setError("Phone number is required!");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        if(phone.length() < 10){
+            editTextPassword.setError("Phone number is invalid!");
+            editTextPassword.requestFocus();
+            return;
+        }
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
-                            Student student = new Student(fullName, age, email, userType);
+                            Student student = new Student(fullName, age, email, phone,userType);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

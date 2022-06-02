@@ -2,18 +2,19 @@ package com.sendiribuat.studentcare;
 
 public class StudentRequestModel
 {
-    String age,date,fullName,time, userid,email;
+    String age,date,fullName,time, userid,email, phone;
 
     StudentRequestModel(){
     }
 
-    public StudentRequestModel(String age, String date, String fullName, String time, String userid, String email) {
+    public StudentRequestModel(String age, String date, String fullName, String time, String userid, String email, String phone) {
         this.age = age;
         this.date = date;
         this.fullName = fullName;
         this.time = time;
         this.userid = userid;
         this.email = email;
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -62,5 +63,13 @@ public class StudentRequestModel
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

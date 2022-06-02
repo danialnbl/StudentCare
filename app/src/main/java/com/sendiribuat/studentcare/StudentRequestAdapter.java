@@ -33,6 +33,7 @@ public class StudentRequestAdapter extends FirebaseRecyclerAdapter<StudentReques
         holder.time.setText(model.getTime());
         holder.userId.setText(model.getUserid());
         holder.email.setText(model.getEmail());
+        holder.phone.setText(model.getPhone());
     }
 
     @NonNull
@@ -43,7 +44,7 @@ public class StudentRequestAdapter extends FirebaseRecyclerAdapter<StudentReques
     }
 
     class studentRequestHolder extends RecyclerView.ViewHolder{
-        TextView age,date,fullName,time,userId,email;
+        TextView age,date,fullName,time,userId,email,phone;
 
         public studentRequestHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +54,7 @@ public class StudentRequestAdapter extends FirebaseRecyclerAdapter<StudentReques
             time = (TextView) itemView.findViewById(R.id.vTime);
             userId = (TextView) itemView.findViewById(R.id.userId);
             email = (TextView) itemView.findViewById(R.id.email);
+            phone = (TextView) itemView.findViewById(R.id.phone);
 
             itemView.findViewById(R.id.acceptBtn).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -60,7 +62,7 @@ public class StudentRequestAdapter extends FirebaseRecyclerAdapter<StudentReques
                     String counselorID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                     Session session = new Session(fullName.getText().toString(),age.getText().toString(),date.getText().toString(),
-                            time.getText().toString(),userId.getText().toString(),email.getText().toString());
+                            time.getText().toString(),userId.getText().toString(),email.getText().toString(),phone.getText().toString());
 
                     FirebaseDatabase.getInstance().getReference("CounselorsSession")
                             .child(counselorID).child("Students").child(userId.getText().toString()).setValue(session);

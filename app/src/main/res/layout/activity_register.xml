@@ -61,6 +61,17 @@
                 android:hint="Age"
                 android:inputType="text"
                 android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/gray_app"
+                android:textColor="@color/gray_app"
+                android:hint="Your Phone Number"
+                android:inputType="text"
+                android:textSize="16sp" />
+
             <EditText
                 android:id="@+id/email"
                 android:layout_width="240dp"

@@ -24,6 +24,7 @@ public class StudentListAdapter extends FirebaseRecyclerAdapter<model,StudentLis
         holder.fullName.setText(model.getFullName());
         holder.age.setText(model.getAge());
         holder.email.setText(model.getEmail());
+        holder.phone.setText(model.getPhone());
     }
 
     @NonNull
@@ -35,13 +36,14 @@ public class StudentListAdapter extends FirebaseRecyclerAdapter<model,StudentLis
 
     class myviewholder extends RecyclerView.ViewHolder
     {
-        TextView fullName,age,email;
+        TextView fullName,age,email,phone;
         public myviewholder(@NonNull View itemView)
         {
             super(itemView);
             fullName = (TextView) itemView.findViewById(R.id.vFullName);
             age = (TextView) itemView.findViewById(R.id.vAge);
             email = (TextView) itemView.findViewById(R.id.vEmail);
+            phone = (TextView) itemView.findViewById(R.id.vPhone);
         }
     }
 }

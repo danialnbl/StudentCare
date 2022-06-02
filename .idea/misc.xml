@@ -32,7 +32,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_profile.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_sound_meditation.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_splash_screen.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_student_list.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_welcome.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_work_break.xml" value="0.18614130434782608" />
@@ -46,6 +46,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/studentrequestlist.xml" value="0.23143115942028986" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/menu/counselor_menu.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/menu/student_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
   </component>
