@@ -21,12 +21,14 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/switch_tumbs.xml" value="0.2890625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/timer_icon.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/drawable/view_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_be_listener.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_book_session.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_breath_meditation.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_counselor_login.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_counselor_weekly_agenda.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_daily_plans.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_listener_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_profile.xml" value="0.13020833333333334" />
@@ -34,6 +36,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_sound_meditation.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_student_list.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_teller_listener_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_volunteer_menu.xml" value="0.2509057971014493" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_welcome.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/activity_work_break.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/content_breath_meditation.xml" value="0.25416666666666665" />
@@ -44,6 +48,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/student_tab_fragment.xml" value="0.16" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/studentlist.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/studentrequestlist.xml" value="0.23143115942028986" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/layout/volunteerlist.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/menu/counselor_menu.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/menu/student_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/StudentCare/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />

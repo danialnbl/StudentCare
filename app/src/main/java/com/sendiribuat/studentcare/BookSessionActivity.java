@@ -84,6 +84,10 @@ public class BookSessionActivity extends AppCompatActivity implements View.OnCli
                         startActivity(new Intent(BookSessionActivity.this,DailyPlansActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case (R.id.volunteer):
+                        startActivity(new Intent(BookSessionActivity.this,VolunteerMenuActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
 
                 return false;

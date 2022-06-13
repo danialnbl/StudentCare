@@ -13,6 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentCare">
         <activity
+            android:name=".tellerListenerListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BeListenerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListenerListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VolunteerMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".WorkBreakActivity"
             android:exported="false" />
         <activity

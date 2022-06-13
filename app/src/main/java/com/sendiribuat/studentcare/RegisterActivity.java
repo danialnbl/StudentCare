@@ -107,8 +107,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if(phone.length() < 10){
-            editTextPassword.setError("Phone number is invalid!");
-            editTextPassword.requestFocus();
+            editTextPhone.setError("Phone number is invalid!");
+            editTextPhone.requestFocus();
             return;
         }
 

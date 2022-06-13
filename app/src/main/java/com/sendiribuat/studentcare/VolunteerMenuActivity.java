@@ -3,8 +3,6 @@ package com.sendiribuat.studentcare;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,33 +10,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class DailyPlansActivity extends AppCompatActivity implements View.OnClickListener{
+public class VolunteerMenuActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private CardView BreathMeditationCV, MusicMeditationCV, WorkBreakCV;
+    private Button toListenerBtn, toFindListenerBtn;
     private BottomNavigationView bottomNavigationView;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daily_plans);
+        setContentView(R.layout.activity_volunteer_menu);
 
-        BreathMeditationCV = findViewById(R.id.BreathMeditationCard);
-        BreathMeditationCV.setOnClickListener(this);
-
-        MusicMeditationCV = findViewById(R.id.SoundMeditationCard);
-        MusicMeditationCV.setOnClickListener(this);
-
-        WorkBreakCV = findViewById(R.id.workBreakCard);
-        WorkBreakCV.setOnClickListener(this);
+        toListenerBtn = (Button) findViewById(R.id.ToListener);
+        toListenerBtn.setOnClickListener(this);
+        toFindListenerBtn = (Button) findViewById(R.id.ToFindListener);
+        toFindListenerBtn.setOnClickListener(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.daily_plan);
+        bottomNavigationView.setSelectedItemId(R.id.volunteer);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -49,33 +43,34 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
                 switch (item.getItemId())
                 {
                     case (R.id.daily_plan):
+                        startActivity(new Intent(VolunteerMenuActivity.this,DailyPlansActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case (R.id.session):
-                        startActivity(new Intent(DailyPlansActivity.this,BookSessionActivity.class));
+                        startActivity(new Intent(VolunteerMenuActivity.this,BookSessionActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case (R.id.volunteer):
-                        startActivity(new Intent(DailyPlansActivity.this,VolunteerMenuActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                 }
 
                 return false;
             }
         });
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.BreathMeditationCard:
-                startActivity(new Intent(this, BreathMeditationActivity.class));
+            case R.id.ToListener:
+                startActivity(new Intent(this, BeListenerActivity.class));
+                overridePendingTransition(0,0);
                 break;
-            case R.id.SoundMeditationCard:
-                startActivity(new Intent(this,SoundMeditationActivity.class));
-                break;
-            case R.id.workBreakCard:
-                startActivity(new Intent(this,WorkBreakActivity.class));
+
+            case R.id.ToFindListener:
+                startActivity(new Intent(this, ListenerListActivity.class));
+                overridePendingTransition(0,0);
                 break;
         }
     }
@@ -88,7 +83,7 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mAuth.signOut();
-                        startActivity(new Intent(DailyPlansActivity.this,WelcomeActivity.class));
+                        startActivity(new Intent(VolunteerMenuActivity.this,WelcomeActivity.class));
                     }
                 })
                 .setNegativeButton("No", null)
@@ -97,6 +92,6 @@ public class DailyPlansActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onBackPressed() {
-        alert(DailyPlansActivity.this);
+        alert(VolunteerMenuActivity.this);
     }
 }
